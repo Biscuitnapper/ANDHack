@@ -1,11 +1,24 @@
 /* CSS declarations go here */
 
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
 .video {
     position: absolute;
-    
-    height: 480px;
-    width: 800px;
-    
+
+    height: 56.5%;
+    width: 100%;
+
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    margin: auto;
+
 }
 
 .archive-video{
@@ -20,7 +33,8 @@
 #slider-area {
     position: absolute;
     margin: 10px;
-    top: 500px;
-    
+    bottom: 10%;
+    left: 0px;
+    right: 0px;
     z-index: 4;
 }
