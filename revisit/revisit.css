@@ -1,9 +1,21 @@
 /* CSS declarations go here */
 
 body {
-  background-color: black;
-  color: white;
-  text-align: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+
+/*popup stylings*/
+
+.popup-container {
+
+    position: absolute;
+    display: none;
+
+    width: 50%;
+    height: 50%;
 }
 
 .video {
@@ -12,13 +24,13 @@ body {
     height: 56.5%;
     width: 100%;
 
+
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
 
     margin: auto;
-
 }
 
 .archive-video{
@@ -28,6 +40,8 @@ body {
 .new-video{
     z-index: 3;
     opacity: 0.5;
+
+    transform: rotate(3deg) translate(-65px, -5px);
 }
 
 #slider-area {
@@ -37,4 +51,23 @@ body {
     left: 0px;
     right: 0px;
     z-index: 4;
+}
+
+/*Map stylings*/
+
+#map {
+
+    position: absolute;
+    height: 500px;
+    width: 1000px;
+
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    margin: auto;
+
+    color: black;
+
 }

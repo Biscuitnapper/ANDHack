@@ -41,6 +41,7 @@ Template.VideoOverlay.onRendered(function(){
 });
 
 Template.VideoOverlay.helpers({
+
    'opacity': function(){
      return Session.get("opacity");
    },
@@ -55,11 +56,19 @@ Template.VideoOverlay.helpers({
 });
 
 Template.VideoOverlay.events({
-
    'input #opacity-slider' : function(event){
         event.preventDefault();
-
         Session.set("opacity", $(event.target).val());
+   },
 
+   'click #close-video': function(event) {
+      event.preventDefault();
+      Session.set('showVideo', false);
+    }
+});
+
+Template.MarkerContent.helpers({
+   'showVideo': function () {
+     return Session.get('showVideo');
    }
 });

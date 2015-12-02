@@ -4,20 +4,40 @@
 
 <body>
   <h1>Revisit</h1>
+  {{> MarkerContent}}
 
-  {{> VideoOverlay}}
+  {{> initialPage}}
 
 </body>
 
+<template name="initialPage">
+  {{> VideoMap}}
+
+</template>
+
+<template name="MarkerContent">
+  {{#if showVideo}}
+    {{> VideoOverlay}}
+  {{/if}}
+</template>
+
 <template name="VideoOverlay">
   <video class="video new-video" src="/sackville-1-800w.mp4" autoplay loop
-    style="opacity:{{ opacity}}; transform: rotate(1.5deg) translate({{ translateX }}px, {{translateY}}px" muted>
+    style="opacity:{{ opacity}}; transform: rotate(1.5deg) translate({{ translateX }}px, {{translateY}}px);" muted>
   </video>
 
   <video class="video archive-video" src="/sackvile-place-800w.mp4" autoplay loop muted></video>
 
   <div id="slider-area">
+    <button id="close-video">Close</button>
     <input id="opacity-slider" type="range" min="0" max="1" value="0.5" step="0.01"/>
   </div>
+</template>
 
+<template name="VideoMap">
+  <div id="map"></div>
+
+  <div class="popup-container">
+    {{> VideoOverlay}}
+  </div>
 </template>
