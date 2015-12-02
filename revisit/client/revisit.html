@@ -5,9 +5,14 @@
 <body>
   <h1>Revisit</h1>
   
-  {{> VideoOverlay}}
+  {{> initialPage}}
   
 </body>
+
+<template name="initialPage">
+  {{> VideoMap}}
+
+</template>
 
 <template name="VideoOverlay">
   <video class="video new-video" src="/sackville-1-800w.mp4" autoplay loop style="opacity:{{ opacity}}" muted>
@@ -19,4 +24,12 @@
     <input id="opacity-slider" type="range" min="0" max="1" value="0.5" step="0.01"/>
   </div>
   
+</template>
+
+<template name="VideoMap">
+  <div id="map"></div>
+  
+  <div class="popup-container">
+    {{> VideoOverlay}}
+  </div>
 </template>
