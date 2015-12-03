@@ -2,10 +2,22 @@
 
 body {
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #090D1C;
+    
+    font-family: 'Raleway', sans-serif;
 }
 
+h1 {
+    text-align: right;
+    margin-right: 10%;
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: 4em;
+    
+    letter-spacing: 3px;
+    /*font-weight: 700;*/
+}
 
 /*popup stylings*/
 
@@ -18,10 +30,25 @@ body {
     height: 50%;
 }
 
+#video-container {
+    position: absolute;
+    
+    top: 7%;
+    left: 35%;
+    
+    /*border-radius: 50%;*/
+    height: 70%;
+    width: 80%;
+    
+    /*overflow: hidden;
+    z-index: 4;*/
+}
+
 .video {
     position: absolute;
 
     height: 56.5%;
+    /*height: 100%;*/
     width: 100%;
 
 
@@ -55,19 +82,102 @@ body {
 
 /*Map stylings*/
 
+/*SoundWalk stylings*/
+
+#sound-walk-button {
+    position: absolute;
+    top: 17%;
+    left: 10%;
+    
+    height: 100px;
+    width: 100px;
+    
+    border-radius: 50%;
+    
+    /*background-color: #232F69;*/
+    background-color: #44AE95;
+}
+
+#sound-walk-button p {
+    font-size: 1em;
+    position: relative;
+    top: 40%;
+    margin: auto;
+}
+
+#sound-walk-button:hover {
+    cursor: pointer;
+}
+
 #map {
 
     position: absolute;
-    height: 500px;
-    width: 1000px;
+    height: 550px;
+    width: 700px;
 
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 12%;
+    /*right: 0%;
+    bottom: 0%;*/
+    left: 4%;
 
     margin: auto;
 
     color: black;
+    
+    border-radius: 50%;
+    /*border: 10px solid #449C5B;*/
+    border: 10px solid #44AE95;
+    
+    overflow: hidden;
+    
+    z-index: 0;
+}
 
+.sound-walk {
+    position: absolute;
+    
+    display: none;
+}
+
+#sound-walk-container {
+    position: absolute;
+    
+    top: 40%;
+    left: 45%;
+    
+    height: 350px;
+    width: 350px;
+
+    background-color: #222536;
+    
+    border-radius: 50%;
+    
+    z-index: 6; 
+}
+
+#sound-walk-container img {
+    border-radius: 50%;
+    margin: 10%;
+    padding: 10%;
+    
+    height: 50%;
+    width: 50%;
+}
+
+#sound-walk-container p {
+    position: relative;
+    top: -15%;
+    
+    color: white;
+    
+    padding: 0;
+    margin: 0;
+}
+
+button#close-sound-walk-button {
+    position: absolute;
+    top: 55%;
+    left: 65%;
+    
+    z-index: 7;
 }

@@ -1,10 +1,14 @@
 <head>
   <title>revisit</title>
+    
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300|Raleway' rel='stylesheet' type='text/css'>
+  
 </head>
 
 <body>
   <h1>Revisit</h1>
   {{> MarkerContent}}
+  {{> SoundWalkContent}}
 
   {{> initialPage}}
 
@@ -12,7 +16,6 @@
 
 <template name="initialPage">
   {{> VideoMap}}
-
 </template>
 
 <template name="MarkerContent">
@@ -21,23 +24,55 @@
   {{/if}}
 </template>
 
+<template name="SoundWalkContent">
+  {{#if showSoundWalk}}
+    {{> SoundWalk}}
+  {{/if}}
+</template>
+
 <template name="VideoOverlay">
-  <video class="video new-video" src="/sackville-1-800w.mp4" autoplay loop
-    style="opacity:{{ opacity}}; transform: rotate(1.5deg) translate({{ translateX }}px, {{translateY}}px);" muted>
-  </video>
+  <div id="video-container">
+    <video class="video new-video" src="/sackville-1-800w.mp4" autoplay loop
+      style="opacity:{{ opacity}}; transform: rotate(1.5deg) translate({{ translateX }}px, {{translateY}}px);" muted>
+    </video>
 
-  <video class="video archive-video" src="/sackvile-place-800w.mp4" autoplay loop muted></video>
-
-  <div id="slider-area">
-    <button id="close-video">Close</button>
-    <input id="opacity-slider" type="range" min="0" max="1" value="0.5" step="0.01"/>
+    <video class="video archive-video" src="/sackvile-place-800w.mp4" autoplay loop muted></video>
+    
+    <div id="slider-area">
+      <button id="close-video">Close</button>
+      <input id="opacity-slider" type="range" min="0" max="1" value="0.5" step="0.01"/>
+    </div>
+    
   </div>
+  
 </template>
 
 <template name="VideoMap">
   <div id="map"></div>
+  <div id="sound-walk-button">
+    <p>sound walk</p>
+  </div>
 
   <div class="popup-container">
     {{> VideoOverlay}}
   </div>
+  
+  <div class="sound-walk">
+    {{> SoundWalk}}
+  </div>
+</template>
+
+<template name="SoundWalk">
+  <div id="sound-walk-container">
+    <img src="soundWalkphoto.jpg"/>
+    <audio id="soundwalk-audio" loop>
+      <source src="ManchesterWalk.ogg" type="audio/ogg">
+    </audio>
+    <p>Sound Walk <br> 02/12/2015</p>
+  </div>
+  
+  <div>
+    <button id="close-sound-walk-button">Close</button>
+  </div>
+  
 </template>

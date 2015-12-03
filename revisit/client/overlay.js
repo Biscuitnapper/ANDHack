@@ -72,3 +72,29 @@ Template.MarkerContent.helpers({
      return Session.get('showVideo');
    }
 });
+
+Template.SoundWalkContent.helpers({
+   'showSoundWalk': function() {
+     return Session.get('showSoundWalk');
+   }
+});
+
+Template.VideoMap.events({
+   'click #sound-walk-button': function(event){
+      event.preventDefault();
+      Session.set('showSoundWalk', true);
+   }
+});
+
+Template.VideoMap.helpers({
+   'showSoundWalk': function(){
+     return Session.get('showSoundWalk');
+   }
+});
+
+Template.SoundWalk.events({
+   'click #close-sound-walk-button': function(event){
+      event.preventDefault();
+      Session.set('showSoundWalk', false);
+   }
+});
